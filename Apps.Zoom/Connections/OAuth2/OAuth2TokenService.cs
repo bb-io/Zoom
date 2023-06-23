@@ -59,7 +59,7 @@ public class OAuth2TokenService : IOAuth2TokenService
 
     public Task RevokeToken(Dictionary<string, string> values)
     {
-        var requestUrl = UrlConstants.ZoomOauthUrl + ApiEndpoints.TokenEndpoint;
+        var requestUrl = UrlConstants.ZoomOauthUrl + ApiEndpoints.RevokeTokenEndpoint;
         var devCreds = new DeveloperCredentials(values["client_id"], values["client_secret"]);
 
         var bodyParameters = new Dictionary<string, string>
