@@ -30,7 +30,7 @@ public class OAuth2TokenService : IOAuth2TokenService
         CancellationToken cancellationToken)
     {
         var requestUrl = UrlConstants.ZoomOauthUrl + ApiEndpoints.TokenEndpoint;
-        var devCreds = new DeveloperCredentials(values["client_id"], values["client_secret"]);
+        var devCreds = new DeveloperCredentials(ApplicationConstants.ClientId, ApplicationConstants.ClientSecret);
         
         var bodyParameters = new Dictionary<string, string>
         {
@@ -46,7 +46,7 @@ public class OAuth2TokenService : IOAuth2TokenService
         CancellationToken cancellationToken)
     {
         var requestUrl = UrlConstants.ZoomOauthUrl + ApiEndpoints.TokenEndpoint;
-        var devCreds = new DeveloperCredentials(values["client_id"], values["client_secret"]);
+        var devCreds = new DeveloperCredentials(ApplicationConstants.ClientId, ApplicationConstants.ClientSecret);
 
         var bodyParameters = new Dictionary<string, string>
         {
@@ -60,7 +60,7 @@ public class OAuth2TokenService : IOAuth2TokenService
     public Task RevokeToken(Dictionary<string, string> values)
     {
         var requestUrl = UrlConstants.ZoomOauthUrl + ApiEndpoints.RevokeTokenEndpoint;
-        var devCreds = new DeveloperCredentials(values["client_id"], values["client_secret"]);
+        var devCreds = new DeveloperCredentials(ApplicationConstants.ClientId, ApplicationConstants.ClientSecret);
 
         var bodyParameters = new Dictionary<string, string>
         {

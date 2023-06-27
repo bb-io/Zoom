@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using Blackbird.Applications.Sdk.Common;
+using System.Text.Json.Serialization;
 
 namespace Apps.Zoom.Models.ResponseModels.Meetings;
 
@@ -11,11 +12,13 @@ public record Meeting
     public string Topic { get; init; }
     
     [JsonPropertyName("join_url")]
+    [Display("Join URL")]
     public string JoinUrl { get; init; }
     
     [JsonPropertyName("password")]
     public string Password { get; init; }
     
     [JsonPropertyName("start_time")]
+    [Display("Start time")]
     public DateTime StartTime { get; init; }
 }

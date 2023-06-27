@@ -13,7 +13,7 @@ public class OAuth2AuthorizationSerivce : IOAuth2AuthorizeService
         var parameters = new Dictionary<string, string>
         {
             { "response_type", "code" },
-            { "client_id", values["client_id"] },
+            { "client_id", ApplicationConstants.ClientId },
             { "redirect_uri", ApplicationConstants.RedirectUri },
         };
         
