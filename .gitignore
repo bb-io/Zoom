@@ -355,3 +355,4 @@ healthchecksdb
 *.dmg
 *.env
 /Apps.Zoom/ApplicationConstants.cs
+/Apps.Zoom/ApplicationConstants.cs
