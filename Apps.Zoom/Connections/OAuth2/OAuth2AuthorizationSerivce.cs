@@ -15,6 +15,7 @@ public class OAuth2AuthorizationSerivce : IOAuth2AuthorizeService
             { "response_type", "code" },
             { "client_id", ApplicationConstants.ClientId },
             { "redirect_uri", ApplicationConstants.RedirectUri },
+            { "state", values["state"] }
         };
         
         return QueryHelpers.AddQueryString(authorizeUrl, parameters);

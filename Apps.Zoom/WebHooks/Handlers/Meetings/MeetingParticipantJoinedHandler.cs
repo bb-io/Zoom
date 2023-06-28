@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Apps.Zoom.WebHooks.Handlers.Meetings
 {
-    public class MeetingParticipantJoined : BaseWebhookHandler
+    public class MeetingParticipantJoinedHandler : BaseWebhookHandler
     {
         const string SubscriptionEvent = "meeting.participant_joined";
-        public MeetingParticipantJoined() : base(SubscriptionEvent) { }
+        public MeetingParticipantJoinedHandler() : base(SubscriptionEvent) { }
     }
 }

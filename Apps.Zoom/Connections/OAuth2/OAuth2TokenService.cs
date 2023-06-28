@@ -26,7 +26,7 @@ public class OAuth2TokenService : IOAuth2TokenService
 
     #region TokenMethods
 
-    public Task<Dictionary<string, string>> RequestToken(string state, string code, Dictionary<string, string> values,
+    public async Task<Dictionary<string, string>> RequestToken(string state, string code, Dictionary<string, string> values,
         CancellationToken cancellationToken)
     {
         var requestUrl = UrlConstants.ZoomOauthUrl + ApiEndpoints.TokenEndpoint;
@@ -38,8 +38,16 @@ public class OAuth2TokenService : IOAuth2TokenService
             { "redirect_uri", ApplicationConstants.RedirectUri },
             { "code", code }
         };
-
-        return GetAuthData(requestUrl, devCreds, bodyParameters, cancellationToken);
+        try
+        {
+            return await GetAuthData(requestUrl, devCreds, bodyParameters, cancellationToken);
+        }
+        catch(Exception ex)
+        {
+            MathijsLogger.Log(ex.Message);
+            return new Dictionary<string, string>();    
+        }
+        
     }
 
     public Task<Dictionary<string, string>> RefreshToken(Dictionary<string, string> values,

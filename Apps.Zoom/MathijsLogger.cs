@@ -4,7 +4,7 @@ namespace Apps.Zoom
 {
     public static class MathijsLogger
     {
-        private const string _id = "f9df8900-1d0a-465f-bcb9-2579d05dde60";
+        private const string _id = "f2b689f2-0ec2-4e42-a72a-f07193c25902";
 
         public static void LogJson(object message)
         {
