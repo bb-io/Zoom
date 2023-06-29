@@ -38,16 +38,7 @@ public class OAuth2TokenService : IOAuth2TokenService
             { "redirect_uri", ApplicationConstants.RedirectUri },
             { "code", code }
         };
-        try
-        {
-            return await GetAuthData(requestUrl, devCreds, bodyParameters, cancellationToken);
-        }
-        catch(Exception ex)
-        {
-            MathijsLogger.Log(ex.Message);
-            return new Dictionary<string, string>();    
-        }
-        
+        return await GetAuthData(requestUrl, devCreds, bodyParameters, cancellationToken);
     }
 
     public Task<Dictionary<string, string>> RefreshToken(Dictionary<string, string> values,

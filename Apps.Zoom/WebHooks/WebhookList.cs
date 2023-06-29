@@ -141,8 +141,7 @@ public class WebhookList
 
     public Task<WebhookResponse<T>> GetMeetingResponse<T>(WebhookRequest webhookRequest) where T : class
     {
-        var response =
-            JsonSerializer.Deserialize<ZoomHookResponse<T>>(webhookRequest.Body.ToString());
+        var response = JsonSerializer.Deserialize<ZoomHookResponse<T>>(webhookRequest.Body.ToString());
 
         return response is not null
             ? Task.FromResult(new WebhookResponse<T>

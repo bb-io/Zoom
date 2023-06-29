@@ -18,12 +18,10 @@ namespace Apps.Zoom.WebHooks
             var token = authenticationCredentialsProviders.First(p => p.KeyName == "access_token").Value;
             var handler = new JwtSecurityTokenHandler();
             var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
-            MathijsLogger.LogJson(jsonToken.Claims);
-            var accountId = jsonToken?.Claims.FirstOrDefault(claim => claim.Type == "accountId")?.Value;
+            var accountId = jsonToken?.Claims.FirstOrDefault(claim => claim.Type == "aid")?.Value;
 
-            if (accountId == null) throw new Exception("Could not extract accountId from JWT token");
+            if (accountId == null) throw new Exception("Could not extract aid from JWT token");
             AccountId = accountId;
-
         }
         public void Subscribe(string _event, string url)
         {

@@ -17,8 +17,4 @@ public record Meeting
     
     [JsonPropertyName("password")]
     public string Password { get; init; }
-    
-    [JsonPropertyName("start_time")]
-    [Display("Start time")]
-    public DateTime StartTime { get; init; }
 }
